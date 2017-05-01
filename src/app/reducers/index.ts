@@ -28,3 +28,4 @@ export function reducer(state: any, action: any) {
 
 export const getExample = (state: State) => state.example;
 export const getExampleCounter = createSelector(getExample, fromExample.getCounter);
+export const getExampleMessage = createSelector(getExample, fromExample.getMessage);

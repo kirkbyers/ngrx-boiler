@@ -14,6 +14,7 @@ import { exampleActions } from '../../actions';
 })
 export class AppComponent implements OnInit {
   counter$: Observable<number>;
+  message$: Observable<string>;
 
   title = 'app works!';
 
@@ -23,10 +24,11 @@ export class AppComponent implements OnInit {
 
   ngOnInit () {
     this.counter$ = this._store$.select(selectors.getExampleCounter);
-    Observable.interval(1000).subscribe(() => this.increment());
+    this.message$ = this._store$.select(selectors.getExampleMessage);
+    Observable.interval(1000).first().subscribe(() => this.increment());
   }
 
   increment () {
-    this.counter$.first().subscribe(val => this._store$.dispatch(new exampleActions.SetAction(val + 1)));
+    this.counter$.first().subscribe(val => this._store$.dispatch(new exampleActions.IncAction(val + 1)));
   }
 }

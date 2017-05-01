@@ -3,19 +3,26 @@ import { Action } from '@ngrx/store';
 import { type } from '../utils';
 
 export const ActionTypes = {
-  EXAMPLE_UPDATE:         type('[Example] Update'),
-  EXAMPLE_UPDATE_SUCCESS: type('[Example] Update Success'),
-  EXAMPLE_SET:            type('[Example] Set')
+  EXAMPLE_CLEAR_MESSAGE:  type('[Example] Clear Message'),
+  EXAMPLE_INC:            type('[Example] Inc'),
+  EXAMPLE_INC_SUCCESS:    type('[Example] Inc Success'),
+  EXAMPLE_SET:            type('[Example] Set'),
+  EXAMPLE_RESET:          type('[Example] Reset')
 };
 
-export class UpdateAction implements Action {
-  type = ActionTypes.EXAMPLE_UPDATE;
+export class ClearMessageAction implements Action {
+  type = ActionTypes.EXAMPLE_CLEAR_MESSAGE;
+  payload = null;
+}
+
+export class IncAction implements Action {
+  type = ActionTypes.EXAMPLE_INC;
   constructor (public payload: any) {}
 }
 
-export class UpdateSuccessAction implements Action {
-  type = ActionTypes.EXAMPLE_UPDATE_SUCCESS;
-  payload = null;
+export class IncSuccessAction implements Action {
+  type = ActionTypes.EXAMPLE_INC_SUCCESS;
+  constructor (public payload: string) {}
 }
 
 export class SetAction implements Action {
@@ -23,7 +30,14 @@ export class SetAction implements Action {
   constructor (public payload: any) {}
 }
 
+export class ResetAction implements Action {
+  type = ActionTypes.EXAMPLE_RESET;
+  payload = null;
+}
+
 export type Actions
-  = UpdateAction
-  | UpdateSuccessAction
+  = ClearMessageAction
+  | IncAction
+  | IncSuccessAction
+  | ResetAction
   | SetAction;

@@ -6,9 +6,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MdButtonModule } from '@angular/material';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
 
 import { AppComponent } from './containers';
 import { reducer } from './reducers';
+import { ExampleEffects } from './effects';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { reducer } from './reducers';
     BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
+    EffectsModule.run(ExampleEffects),
     HttpModule,
     StoreModule.provideStore(reducer),
     StoreDevtoolsModule.instrumentOnlyWithExtension(), // NOTE. Must come after `StoreModule`
