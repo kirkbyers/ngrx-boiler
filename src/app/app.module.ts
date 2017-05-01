@@ -13,6 +13,10 @@ import {
   AppComponent,
   HomeComponent
 } from './containers';
+import {
+  SideNavComponent
+} from './components';
+
 import { reducer } from './reducers';
 import { ExampleEffects } from './effects';
 
@@ -20,7 +24,8 @@ import { routes } from './routes';
 
 const components = [
   AppComponent,
-  HomeComponent
+  HomeComponent,
+  SideNavComponent
 ];
 
 @NgModule({
