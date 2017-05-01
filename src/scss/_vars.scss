@@ -1,0 +1,40 @@
+$font-family: Roboto, "Helvetica Neue", sans-serif;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+$font-size-normal: 13px;
+$font-size-large: 14px;
+$font-size-title: 16px;
+$font-size-headline: 20px;
+$font-size-caption: 12px;
+
+$line-height-normal: 20px;
+$line-height-title: 32px;
+
+// Material opacities - https://material.io/guidelines/style/color.html#color-color-schemes
+$opacity-primary: 0.87;
+$opacity-secondary: 0.54;
+$opacity-disabled: 0.38;
+$opacity-divider: 0.12;
+
+$spacing-vertical: 16px;
+$spacing-vertical-extended: 8px;
+$spacing-horizontal: 24px;
+$spacing-major-components: 2px;
+
+$fixed-height-avatar: 32px;
+$fixed-height-icon: 20px;
+$fixed-height-list-icon: 24px;
+$fixed-height-icon-button-icon: 20px;   // Size of icon on button
+$fixed-height-icon-button: 40px;        // Size of full button
+$fixed-height-progress-bar: 3px;
+$fixed-height-toolbar: 48px;
+$fixed-width-sidenav: 320px;
+$fixed-width-map-button: 36px;
+
+$z-index-map-overlay: 500;
+
+$border-radius-normal: 3px;
+
+$fixed-height-detail-map: 240px;

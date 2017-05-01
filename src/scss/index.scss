@@ -1,0 +1,4 @@
+// Material 2 overrides. Wrap in `html` to override original styles using CSS heirarchy.
+html {
+  @import 'material/index';
+}
