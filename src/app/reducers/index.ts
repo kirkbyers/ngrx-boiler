@@ -12,7 +12,7 @@ export interface State {
 };
 
 const reducers = {
-  example: fromExample.reducer;
+  example: fromExample.reducer
 };
 
 const developmentReducer: ActionReducer<State> = compose(storeFreeze, combineReducers)(reducers);

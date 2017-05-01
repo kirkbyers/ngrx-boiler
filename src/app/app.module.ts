@@ -7,7 +7,7 @@ import { MdButtonModule } from '@angular/material';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { AppComponent } from './app.component';
+import { AppComponent } from './containers';
 import { reducer } from './reducers';
 
 @NgModule({
