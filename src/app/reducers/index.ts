@@ -26,6 +26,5 @@ export function reducer(state: any, action: any) {
   }
 }
 
-const getExample = (state: State) => state.example;
-
-const getExampleCounter = createSelector(getExample, fromExample.getCounter);
+export const getExample = (state: State) => state.example;
+export const getExampleCounter = createSelector(getExample, fromExample.getCounter);
