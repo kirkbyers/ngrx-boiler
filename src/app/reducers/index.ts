@@ -5,9 +5,15 @@ import { createSelector } from 'reselect';
 
 import { environment } from '../../environments/environment';
 
-export interface State {};
+import * as fromExample from './example';
 
-const reducers = {};
+export interface State {
+  example: fromExample.State;
+};
+
+const reducers = {
+  example: fromExample.reducer;
+};
 
 const developmentReducer: ActionReducer<State> = compose(storeFreeze, combineReducers)(reducers);
 const productionReducer: ActionReducer<State> = compose(combineReducers)(reducers);
@@ -19,3 +25,7 @@ export function reducer(state: any, action: any) {
     return developmentReducer(state, action);
   }
 }
+
+const getExample = (state: State) => state.example;
+
+const getExampleCounter = createSelector(getExample, fromExample.getCounter);
