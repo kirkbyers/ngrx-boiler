@@ -1,8 +1,11 @@
+import 'rxjs/add/observable/interval';
+
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 
 import * as selectors from '../../reducers';
+import { exampleActions } from '../../actions';
 
 @Component({
   selector: 'app-root',
@@ -20,5 +23,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit () {
     this.counter$ = this._store$.select(selectors.getExampleCounter);
+    Observable.interval(1000).subscribe(() => this.increment());
+  }
+
+  increment () {
+    this.counter$.first().subscribe(val => this._store$.dispatch(new exampleActions.SetAction(val + 1)));
   }
 }
