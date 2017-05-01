@@ -1,10 +1,10 @@
-import { DpShellBrowserPage } from './app.po';
+import { AppPage } from './app.po';
 
-describe('dp-shell-browser App', () => {
-  let page: DpShellBrowserPage;
+describe('App', () => {
+  let page: AppPage;
 
   beforeEach(() => {
-    page = new DpShellBrowserPage();
+    page = new AppPage();
   });
 
   it('should display message saying app works', () => {
