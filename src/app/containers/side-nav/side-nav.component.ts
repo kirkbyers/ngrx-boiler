@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs/Observable';
+
+import * as selectors from '../../reducers';
+import { MenuItem } from '../../models';
 
 @Component({
   selector: 'app-side-nav',
@@ -7,30 +12,13 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class SideNavComponent implements OnInit {
-  navItems = [
-    {
-      id: 0,
-      title: 'Home',
-    }, {
-      id: 1,
-      title: 'Page 1',
-      subItems: [
-        {
-          id: 0,
-          title: 'Sub Item 1'
-        },
-        {
-          id: 1,
-          title: 'Sub Item 2'
-        }
-      ]
-    }, {
-      id: 2,
-      title: 'Page 2',
-    }
-  ];
+  navItems$: Observable<MenuItem[]>;
 
-  constructor() { }
+  constructor(
+    private _store$: Store<selectors.State>
+  ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.navItems$ = this._store$.select(selectors.getNavigationItems);
+  }
 }

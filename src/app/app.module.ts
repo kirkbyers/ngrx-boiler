@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
+import { RouterStoreModule } from '@ngrx/router-store';
 
 import {
   MdButtonModule,
@@ -44,6 +45,7 @@ const components = [
     EffectsModule.run(ExampleEffects),
     HttpModule,
     RouterModule.forRoot(routes),
+    RouterStoreModule.connectRouter(),
     StoreModule.provideStore(reducer),
     StoreDevtoolsModule.instrumentOnlyWithExtension(), // NOTE. Must come after `StoreModule`
 
