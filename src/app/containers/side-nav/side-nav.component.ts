@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { go } from '@ngrx/router-store';
 import { Observable } from 'rxjs/Observable';
 
 import * as selectors from '../../reducers';
@@ -25,5 +26,9 @@ export class SideNavComponent implements OnInit {
 
   onToggleSubmenu (menuItem: MenuItem) {
     this._store$.dispatch(new navigationActions.ToggleOpenAction(menuItem));
+  }
+
+  onSelectItem (menuItem: MenuItem) {
+    this._store$.dispatch(go(menuItem.url));
   }
 }
