@@ -11,4 +11,18 @@
 .side-menu-content {
   display: flex;
   flex-direction: column;
+  padding: ($spacing-vertical / 2) ($spacing-horizontal / 2);
+}
+
+.logo {
+  content: ' ';
+  padding: ($spacing-vertical / 2) 0;
+  &::after {
+    content: ' ';
+    display: block;
+    width: 150px;
+    height: 100px;
+    margin: auto;
+    background-color: mediumpurple;
+  }
 }
