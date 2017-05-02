@@ -1,0 +1,11 @@
+<md-list class="menu">
+  <md-list-item>
+    <h4 (click)="selectItem.emit(item)">{{item.title}}</h4>
+    <md-icon *ngIf="subItems.length > 0" svgIcon="keyboard_arrow_down" (click)="toggleSubmenu.emit(item)"></md-icon>
+  </md-list-item>
+</md-list>
+<md-list *ngIf="subItems.length > 0" class="submenu">
+  <md-list-item *ngFor="let subItem of subItems" (click)="selectItem.emit(subItem)">
+    <h5>{{subItem.title}}</h5>
+  </md-list-item>
+</md-list>

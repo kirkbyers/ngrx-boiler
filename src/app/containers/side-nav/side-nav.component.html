@@ -1,0 +1,4 @@
+<div class="logo"></div>
+<div class="side-menu-content">
+  <app-side-nav-item *ngFor="let item of navItems" [item]="item" [subItems]="item.subItems || []" (selectItem)="onSelectItem($event)" (toggleSubmenu)="onToggleSubmenu($event)"></app-side-nav-item>
+</div>

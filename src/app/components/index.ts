@@ -1,1 +1,1 @@
-export { SideNavComponent } from './side-nav';
+export { SideNavItemComponent } from './side-nav-item';
