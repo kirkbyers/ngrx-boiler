@@ -62,9 +62,11 @@ export function reducer (state = initialState, action: navigationActions.Actions
   switch (action.type) {
     case navigationActions.ActionTypes.NAVIGATION_TOGGLE_OPEN:
       if (action.payload.key) {
-        return Object.assign({}, state, Object.assign({}, state[action.payload.key], {
-          open: !state[action.payload.key].open
-        }));
+        return Object.assign({}, state, {
+          [action.payload.key]: Object.assign({}, state[action.payload.key], {
+            open: !state[action.payload.key].open
+          })
+        });
       }
       return state;
     default:

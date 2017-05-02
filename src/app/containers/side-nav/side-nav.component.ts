@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 
 import * as selectors from '../../reducers';
 import { MenuItem } from '../../models';
+import { navigationActions } from '../../actions';
 
 @Component({
   selector: 'app-side-nav',
@@ -20,5 +21,9 @@ export class SideNavComponent implements OnInit {
 
   ngOnInit() {
     this.navItems$ = this._store$.select(selectors.getNavigationItems);
+  }
+
+  onToggleSubmenu (menuItem: MenuItem) {
+    this._store$.dispatch(new navigationActions.ToggleOpenAction(menuItem));
   }
 }

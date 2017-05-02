@@ -2,11 +2,12 @@
   <md-list-item>
     <h4 (click)="selectItem.emit(item)">{{item.title}}</h4>
     <button md-icon-button *ngIf="subItems.length > 0" (click)="toggleSubmenu.emit(item)">
-      <md-icon>keyboard_arrow_down</md-icon>
+      <md-icon *ngIf="!open">keyboard_arrow_down</md-icon>
+      <md-icon *ngIf="open">keyboard_arrow_up</md-icon>
     </button>
   </md-list-item>
 </md-list>
-<md-list *ngIf="subItems.length > 0" class="submenu">
+<md-list *ngIf="subItems.length > 0 && open" class="submenu">
   <md-list-item *ngFor="let subItem of subItems" (click)="selectItem.emit(subItem)">
     <h5>{{subItem.title}}</h5>
   </md-list-item>

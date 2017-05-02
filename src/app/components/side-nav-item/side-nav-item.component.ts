@@ -9,6 +9,7 @@ import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
 export class SideNavItemComponent implements OnInit {
   @Input() item: string;
   @Input() subItems?: string[];
+  @Input() open?: boolean;
 
   @Output() toggleSubmenu = new EventEmitter();
   @Output() selectItem = new EventEmitter();
