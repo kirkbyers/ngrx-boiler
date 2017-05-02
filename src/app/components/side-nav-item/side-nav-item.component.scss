@@ -3,3 +3,11 @@
 .submenu {
   padding-left: $spacing-horizontal;
 }
+
+.menu-icon {
+  margin-right: $spacing-horizontal / 2;
+}
+
+h4, h5, .menu-icon {
+  cursor: pointer;
+}

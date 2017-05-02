@@ -1,5 +1,6 @@
 <md-list class="menu">
   <md-list-item>
+    <md-icon class="menu-icon">{{item.icon}}</md-icon>
     <h4 (click)="selectItem.emit(item)">{{item.title}}</h4>
     <button md-icon-button *ngIf="subItems.length > 0" (click)="toggleSubmenu.emit(item)">
       <md-icon *ngIf="!open">keyboard_arrow_down</md-icon>
